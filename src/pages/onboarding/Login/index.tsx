@@ -78,7 +78,9 @@ const Login = () => {
   });
 
   const onSubmit: SubmitHandler<customerLoginFormInterface> = async (data) => {
-    mutate(data);
+    // mutate(data);
+     setLoggedIn(true);
+      navigate(`/app/${CONSTANTS.ROUTES['dashboard']}`);
   };
 
   useEffect(() => {
