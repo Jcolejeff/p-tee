@@ -41,9 +41,6 @@ const ForgotPassword = () => {
       setLoggedIn(true);
       navigate(`/app/${CONSTANTS.ROUTES['dashboard']}`);
     },
-    onError: (err) => {
-      processError(err);
-    },
   });
 
   const onSubmit: SubmitHandler<customerLoginFormInterface> = (data) => {

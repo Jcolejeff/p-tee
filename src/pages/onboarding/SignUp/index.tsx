@@ -78,9 +78,6 @@ const SignUp = () => {
     onSuccess: (data, variables) => {
       doLoginAttempt({ email: variables.email, password: variables.password });
     },
-    onError: (err) => {
-      processError(err);
-    },
   });
 
   const { mutate: doLoginAttempt } = useMutation<any, any, any>({
@@ -113,10 +110,6 @@ const SignUp = () => {
         console.log('No such document!');
         return null;
       }
-    },
-    onError: (err) => {
-      console.log(err);
-      processError(err);
     },
   });
 

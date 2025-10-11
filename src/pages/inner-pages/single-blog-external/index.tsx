@@ -15,7 +15,7 @@ import CONSTANTS from 'constant';
 import InlineLoader from 'components/Loaders/InlineLoader';
 import { formatDate } from 'lib/utils';
 import TextContentLoader from 'components/Loaders/TextContentLoader';
-import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import EmptyContentWrapper from 'components/Hocs/EmptyContentWrapper';
 import ContentLoader from 'components/general/ContentLoader';
@@ -135,30 +135,30 @@ const SingleBlogExternal = () => {
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             components={{
-              h1: ({ node, ...props }) => (
+              h1: ({ ...props }) => (
                 <h1
                   {...props}
                   className='my-[1rem] text-[1.2rem] font-[500] text-secondary-9/[0.87]'
                 />
               ),
-              b: ({ node, ...props }) => <span {...props} className='' />,
-              i: ({ node, ...props }) => <span {...props} className='' />,
-              blockquote: ({ node, ...props }) => (
+              b: ({ ...props }) => <span {...props} className='' />,
+              i: ({ ...props }) => <span {...props} className='' />,
+              blockquote: ({ ...props }) => (
                 <span
                   {...props}
                   className='mb-[2.5rem] leading-[2rem] tracking-[0.00938rem] text-primary-9/[0.87]'
                 />
               ),
-              ol: ({ node, ...props }) => <ol {...props} className='' />,
-              ul: ({ node, ...props }) => <ul {...props} className='' />,
-              a: ({ node, ...props }) => <a {...props} className='' />,
-              img: ({ node, ...props }) => (
+              ol: ({ ...props }) => <ol {...props} className='' />,
+              ul: ({ ...props }) => <ul {...props} className='' />,
+              a: ({ ...props }) => <a {...props} className='' />,
+              img: ({ ...props }) => (
                 <div className='my-8 flex h-auto max-w-full items-center justify-center overflow-hidden'>
                   {' '}
                   <img {...props} className='h-full w-full' />
                 </div>
               ),
-              p: ({ node, ...props }) => (
+              p: ({ ...props }) => (
                 <p
                   {...props}
                   className='mb-[1.5rem] leading-[2rem] tracking-[0.00938rem] text-primary-9/[0.87]'

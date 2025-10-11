@@ -8,7 +8,20 @@ import { imagetools } from 'vite-imagetools';
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
   const mainConfig = {
-    plugins: [react(), tsconfigPaths({ loose: true }), svgr(), imagetools()],
+    plugins: [
+      react(), 
+      tsconfigPaths({ loose: true }), 
+      svgr({
+        svgrOptions: {
+          exportType: 'named',
+          ref: true,
+          svgo: false,
+          titleProp: true,
+        },
+        include: '**/*.svg',
+      }), 
+      imagetools()
+    ],
     define: {
       'process.env': process.env,
     },
